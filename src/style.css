@@ -1,0 +1,104 @@
+body {
+    background-color: white;
+    padding: 0px 16px 32px 16px;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+    
+}
+
+header {
+    width: 100%;
+    border-top: 6px solid #434343;
+    padding: 32px;
+    box-sizing: border-box;
+    background-color: #ebebeb;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+header > h1 {
+    color: #434343;
+    font-size: larger;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+}
+
+
+header > h2 {
+    color: #434343;
+    font-size: medium;
+    text-align: center;
+    align-self: center;
+    opacity: .75;
+    margin: 0;
+}
+
+
+ul {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-self: center;
+    justify-self: center;
+
+    list-style: none;
+    direction: rtl;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+ul > button {
+    flex: 1 1;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0;
+    min-width: 240px;
+    max-height: 240px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+ul > button > img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+ul > button > label{
+    position: absolute;
+    height: auto;
+    bottom: 6%;
+    width: 90%;
+    left: 5%;
+    background-color: rgba(0, 0, 0, .4);
+    color: white;
+    border-radius: 12px;
+    padding: 6px;
+    box-sizing: border-box;
+    font-size: medium;
+    text-align: center;
+    box-sizing: border-box;
+    pointer-events: none;
+    transition-duration: 0.15s;
+    backdrop-filter: blur(8px);
+    align-items: center;
+}
+
+ul > button:hover > label{
+    bottom: 8%;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .75);
+
+}
