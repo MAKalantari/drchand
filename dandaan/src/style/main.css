@@ -1,0 +1,806 @@
+@import "font.css";
+@import "theme.css";
+@import "scaling.css";
+
+:root {
+    --max-width: 640px;
+}
+
+* {
+    font-family: var(--main-font), inter;
+    font-size: var(--font-medium);
+    font-weight: 600;
+    font-style: normal;
+    direction: rtl;
+}
+
+html, body {
+    height: calc(100% - 10px);
+    box-sizing: border-box;
+} 
+
+body {
+    background-color: var(--main-bg);
+    background-image: var(--main-bg-img, none);
+    box-sizing: border-box;
+}
+
+.main-container {
+    padding: 10px 10px calc(var(--font-medium) * 5 + 10px) 10px;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    justify-content: stretch;
+}
+
+button {
+    border-top: var(--button-full-border-width, 0) solid var(--button-border) !important;
+    border-right: var(--button-full-border-width, 0) solid var(--button-border) !important;
+    border-left: var(--button-full-border-width, 0) solid var(--button-border) !important;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    backdrop-filter: blur(calc(var(--blur-intensity) * 3));
+    width: 100%;
+    max-width: var(--max-width);
+}
+
+section > h1 {
+    background-color: var(--sec-border);
+    background: repeating-linear-gradient( 45deg, var(--sec-border-strips, var(--sec-border)), var(--sec-border-strips, var(--sec-border)) 5px, var(--sec-border) 5px, var(--sec-border) 15px );
+    border-color: var(--sec-border);
+    border-radius: 10px 10px 0 0;
+    color: var(--sec-diff-text);
+    padding: 5px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: calc(var(--font-small)/2) var(--font-small);
+    text-align: center;
+    user-select: none;
+    text-shadow: 0 0 4px var(--sec-border), 0 0 8px var(--sec-border), 0 0 8px var(--sec-border), 0 0 16px var(--sec-border), 0 0 24px var(--sec-border);
+    font-weight: 800;
+}
+
+section > cite {
+    border-radius: 0 0 10px 10px;
+    border: 1px solid var(--sec-border);
+    border-bottom-width: 5px;
+    background-color: var(--sec-bg);
+    border-color: var(--sec-border);
+
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: row-reverse;
+    gap: 10px;
+    padding: var(--font-small);
+    justify-content: space-around;
+    overflow-y: auto;
+}
+
+.vertical {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    flex: 1 1;
+}
+
+.main-btn{
+    width: auto;
+    height: var(--global-height, auto);
+    flex: 1 0;
+    background-color: var(--button-bg);
+    outline: none;
+    border: var(--button-full-border-width, 0) solid var(--button-border);
+    padding: calc(var(--font-large)/2) var(--font-small);
+    color: var(--button-text);
+    border-radius: 5px;
+    border-bottom: var(--button-full-border-width, 1px) solid var(--button-border);
+}
+
+.main-btn:hover {
+    color: var(--button-text-highlight);
+    padding: calc(var(--font-large) / 2 - (var(--font-small) / 3)) calc(var(--font-small)) calc(var(--font-large) / 2 + (var(--font-small) / 3)) calc(var(--font-small));
+    cursor: pointer;
+
+}
+
+.main-btn:active {
+    padding: calc(var(--font-large)/2) var(--font-small);
+    opacity: 85%;
+}
+
+.bottom-state-btn {
+    display: block;
+    border: 1px solid black;
+    transition-duration: 0.3s;
+    height: calc(100% - 20px);
+    position: absolute; left: 10px;
+    bottom: 10px;
+    align-self: center;
+}
+
+select {
+    width: 100%;
+    height: var(--global-height, auto);
+    flex: 1 0;
+    background-color: var(--button-bg);
+    outline: none;
+    border: 1px solid transparent;
+    border-bottom: var(--button-full-border-width, 1px) solid var(--button-shadow);
+    padding: calc(var(--font-small)/2) var(--font-small);
+    color: var(--button-text);
+    border-radius: 5px;
+    text-align: center;
+    border-top: var(--button-full-border-width, 0) solid var(--button-border) !important;
+    border-right: var(--button-full-border-width, 0) solid var(--button-border) !important;
+    border-left: var(--button-full-border-width, 0) solid var(--button-border) !important;
+}
+
+input {
+    width: 100%;
+    height: calc(var(--font-small) * 3);
+    flex: 1 1;
+    background-color: var(--button-bg);
+    outline: none;
+    border: var(--button-full-border-width, 1px) solid var(--button-shadow);
+    border-radius: 5px;
+    padding: calc(var(--font-small)/2) var(--font-small);
+    color: var(--button-text);
+    box-sizing: border-box;
+    text-align: center;
+    border-top: var(--button-full-border-width, 0) solid var(--button-border) !important;
+    border-right: var(--button-full-border-width, 0) solid var(--button-border) !important;
+    border-left: var(--button-full-border-width, 0) solid var(--button-border) !important;
+}
+
+input:focus {
+    background-color: var(--sec-bg);
+    border: 1px solid var(--button-border);
+    border-radius: 2px;
+    color: var(--button-text-highlight);
+}
+
+.teeth {
+    --teeth-form-inner-border-width: 1px;
+    --teeth-form-gap: 5px;
+
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    width: calc(var(--font-huge) * var(--scale, 3));
+    height: calc(var(--font-huge) * var(--scale, 3));
+    box-sizing: border-box;
+    align-content: space-between;
+    justify-content: space-between;
+    gap: 0px;
+}
+
+.teeth > input{
+    box-sizing: border-box !important;
+    font-size: calc(3.5px * var(--scale, 2));
+    font-family: sans-serif, Tahoma;
+    padding: 0 !important;
+    box-sizing: border-box;
+    flex: 1 1;
+    min-width: calc(50% - (var(--teeth-form-inner-border-width) / 2) - (var(--teeth-form-gap)));
+    min-height: calc(50% - (var(--teeth-form-inner-border-width) / 2) - (var(--teeth-form-gap)));
+    max-width: calc(50% - (var(--teeth-form-inner-border-width) / 2) - (var(--teeth-form-gap)));
+    max-height: calc(50% - (var(--teeth-form-inner-border-width) / 2) - (var(--teeth-form-gap)));
+}
+
+
+.teeth > hr{
+    padding: 0px !important;
+    margin: 0px !important;
+    background-color: var(--button-border);
+    border: none;
+    box-sizing: border-box;
+}
+
+.teeth > hr:nth-of-type(1){
+    width: var(--teeth-form-inner-border-width);
+}
+
+.teeth > hr:nth-of-type(2){
+    width: 100%;
+    height: var(--teeth-form-inner-border-width);
+    
+}
+
+.teeth > hr:nth-of-type(3){
+    width: var(--teeth-form-inner-border-width);
+}
+
+.wide-hr {
+    border-color: var(--button-border);
+    width: 100%;
+    margin: 0;
+}
+
+.bottom {
+    width: 100%;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 0;
+    height: calc(var(--font-medium) * 5);
+    background-color: var(--sec-border);
+    box-sizing: border-box;
+    z-index: 9;
+    border-radius: 10px 10px 0 0;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.bottom > .bottom-inner {
+    max-width: var(--max-width);
+    height: 100%;
+    width: 100%;
+    align-self: center;
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+    box-sizing: border-box;
+    transition-duration: 0.15s;
+}
+
+.hide-btn {
+    border: none;
+    outline: none;
+    position: absolute;
+    left: 5px;
+    background: none;
+    font-size: var(--font-small);
+    color: var(--sec-diff-text);
+    cursor: pointer;
+    opacity: 66%;
+}
+
+.hide-btn:active,
+.hide-btn:hover {
+    opacity: 100%;
+}
+
+.redBorder {
+    border-color: red;
+}
+
+.redBorderBold {
+    border-color: red;
+    border-width: 2px;
+    box-sizing: border-box;
+}
+
+ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    width: 100%;
+    border-bottom: 1px dotted var(--sec-text);
+    list-style: none;
+    margin: 0;
+    padding: 0 0 5px 0;
+    color: var(--color, var(--sec-text));
+    direction: rtl !important;
+    font-size: var(--font-medium);
+    opacity: 85%;
+}
+
+li:hover {
+    opacity: 100%;
+    border-bottom: 1px solid var(--sec-text);
+}
+
+li:hover::before {
+    text-decoration: underline;
+    opacity: 75%;
+}
+
+li::before {
+    content: var(--tag, '');
+    direction: rtl;
+    margin-left: 5px;
+    color: var(--sec-text);
+    opacity: 50%;
+}
+
+li > button {
+    border: none;
+    background: none;
+    background-color: var(--button-bg);
+    border-bottom: var(--button-full-border-width, 2px) solid var(--button-shadow);
+    color: var(--button-text);
+    padding: calc(var(--font-medium) / 4) calc(var(--font-medium) / 2);
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+li > button:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+option::after {
+    content: var(--key, '');
+}
+
+.evaluation {
+    background-color: transparent;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(var(--blur-intensity));
+    z-index: 11;
+    padding: 10px;
+    box-sizing: border-box;
+    display: none;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.evaluation > section > cite{
+    height: 100%;
+}
+
+.more {
+    background-color: transparent;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(var(--blur-intensity));
+    z-index: 11;
+    padding: 10px;
+    box-sizing: border-box;
+    display: none;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.more > section > cite{
+    height: 100%;
+}
+
+.more > section > cite > div{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+}
+
+.more > section > cite > div > label{
+    color: var(--sec-text);
+}
+
+.more > section > cite > div > hr{
+    border-color: var(--button-shadow);
+    border-style: dashed;
+    margin: 5px 0;
+}
+
+.more > section > cite > div > h2{
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    flex-wrap: nowrap;
+    color: var(--sec-text);
+    margin: 10px 0 0 0;
+}
+
+.more > section > cite > div > h2::before{
+    content: ".";
+    position: relative;
+    width: 2%;
+    height: 2px;
+    align-self: center;
+    background-color: var(--button-shadow);
+}
+
+.more > section > cite > div > h2::after{
+    content: ".";
+    position: relative;
+    width: 100%;
+    height: 2px;
+    align-self: center;
+    flex: 1 1;
+    background-color: var(--button-shadow);
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.head {
+    width: 100%;
+    border-radius: 10px;
+    background-color: var(--sec-border);
+    padding: 5px;
+    box-sizing: border-box;
+    color: var(--main-text);
+    height: auto;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 5px;
+    justify-content: stretch;
+    align-items: stretch;
+}
+
+.head > a{
+    width: auto;
+    background-color: var(--main-bg);
+    padding: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition-duration: 0.2s;
+    color: var(--main-text);
+}
+
+.head > a:hover{
+    padding: 5px 15px 5px 15px;
+}
+
+.head > h1{
+    flex: 1 1;
+    background-color: var(--main-bg);
+    padding: 5px;
+    border-radius: 5px;
+    margin: 0;
+    text-decoration: none;
+    text-align: right;
+    user-select: none;
+    color: var(--main-text);
+}
+
+
+.reqinfo {
+    background-color: transparent;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(var(--blur-intensity));
+    z-index: 11;
+    padding: 10px 10px 10px 10px;
+    box-sizing: border-box;
+    display: none;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.reqinfo > section > cite{
+    height: 100%;
+    overflow: auto;
+}
+
+.reqinfo > section > cite > div > img{
+    width: 100%;
+    align-self: center;
+}
+
+.less {
+    font-size: var(--font-small);
+    opacity: 75%;
+}
+
+.inline {
+    width: 100%;
+    flex: 1 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 5px;
+    box-sizing: border-box;
+    align-items: stretch;
+}
+
+.inline > button {
+    width: auto;
+    min-width: 64px;
+    border: var(--button-full-border-width, 1px) solid var(--button-border);
+    border-radius: 5px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    padding: 5px;
+    box-sizing: border-box;
+    margin: none;
+    outline: none;
+}
+
+.inline > button:hover {
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: var(--button-bg);
+    color: var(--button-text-highlight);
+    padding: calc(5px - (3px * var(--direction, 1))) 5px calc(5px + (3px * var(--direction, 1))) 5px;
+}
+
+.inline > button:active {
+    padding: 5px;
+    opacity: 65%;
+}
+
+.inline > button:disabled {
+    opacity: 50%;
+    cursor: initial;
+}
+
+.inline > button:disabled:hover {
+    opacity: 50%;
+    color: var(--button-text);
+    padding: 5px;
+}
+
+.tooltip {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: auto;
+    max-width: 180px;
+    height: auto;
+    padding: 2px 8px;
+    border-radius: 5px;
+    background-color: var(--button-bg);
+    border: 1px solid var(--button-border);
+    display: none;
+    color: var(--button-text);
+    z-index: 20;
+    opacity: 90%;
+    pointer-events: none;
+    font-size: var(--font-small);
+}
+
+.loginpage {
+    min-width: 100%;
+    min-height: 100%;
+    z-index: 50 !important;
+    background-color: var(--main-bg);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    padding: 10px;
+    margin: none;
+    box-sizing: border-box;
+    left: 0;
+    top: 0;
+    gap: 10px;
+}
+
+.loginpage > div {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: none;
+    margin: none;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid var(--sec-border);
+    border-bottom-width: 3px;
+    background-color: var(--sec-bg);
+}
+
+.loginpage > div > input {
+    min-width: 100%;
+    flex: 1 1;
+}
+
+.loginpage > div > button{
+    flex: 1 1;
+    background-color: var(--button-bg);
+    border: 1px solid var(--button-border);
+    border-radius: 5px;
+    color: var(--button-text);
+    cursor: pointer;
+    padding: 5px;
+}
+
+.loginpage > span{
+    flex: 0;
+    color: var(--main-text);
+    opacity: 50%;
+    font-size: var(--font-small);
+
+}
+
+.image-view {
+    background-color: rgba(0, 0, 0, 0.75);
+    min-width: 100%;
+    min-height: 100%;
+    z-index: 45 !important;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    padding: 10px;
+    margin: none;
+    box-sizing: border-box;
+    left: 0;
+    top: 0;
+}
+
+.image-view > img {
+    max-width: calc(100% - 20px);
+    max-height: calc(100vh - 20px);
+}
+
+.title {
+    width: auto;
+    height: var(--global-height, auto);
+    flex: 1 0;
+    background-color: var(--button-bg);
+    outline: none;
+    border: var(--button-full-border-width, 0) solid var(--button-border);
+    padding: calc(var(--font-large)/2) var(--font-small);
+    color: var(--button-text);
+    border-radius: 5px;
+    border-right: 3px solid var(--accent, var(--button-shadow));
+}
+
+.item {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    background-color: var(--sec-bg);
+    overflow-x: auto;
+    border-radius: 5px;
+    border: calc(2 * var(--button-full-border-width, 1px)) solid var(--accent, var(--sec-border));
+    padding: 0;
+    box-sizing: border-box;
+    justify-content: stretch;
+    align-items: stretch;
+}
+
+.item > h1 {
+    display: flex;
+    background-color: var(--accent, var(--sec-border));
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    font-size: var(--font-medium);
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 5px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.item > h1 > label {
+    background-color: var(--sec-bg);
+    padding: 5px;
+    border-radius: 5px;
+    color: var(--sec-text);
+    box-sizing: border-box;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-medium);
+}
+
+.item > h1 > button {
+    background-color: var(--sec-bg);
+    color: var(--sec-text);
+    max-height: calc(var(--font-medium) * 2 + 10px);
+}
+
+.item > section {
+    flex: 1 0;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    gap: 5px;
+}
+
+.item > section > div:nth-of-type(1) {
+    flex-direction: 1 0;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+    align-items: stretch;
+    border-radius: 5px;
+}
+
+.item > section > div:nth-of-type(1) > section {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex-wrap: nowrap;
+}
+
+.item > section > div:nth-of-type(1) > section > input,
+.item > section > div:nth-of-type(1) > section > button,
+.item > section > div:nth-of-type(1) > section > .title {
+    padding: 5px !important;
+}
+
+
+.item > section > div:nth-of-type(1) > section:nth-of-type(2) {
+    max-width: fit-content;
+}
+
+.item > section > div:nth-of-type(1) > section:nth-of-type(4) {
+    max-width: fit-content;
+}
+
+.item > section > div:nth-of-type(2) {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    flex-wrap: wrap;
+    width: 100%;
+    color: var(--sec-text);
+    box-sizing: border-box;
+    align-items: stretch;
+    padding: 5px;
+    background-color: var(--button-bg);
+    border: 1px solid var(--button-border);
+    border-radius: 4px;
+    opacity: 66%;
+}
+
+.item > section > div:nth-of-type(2):hover {
+    opacity: 100%;
+}
+
+.item > section > div:nth-of-type(2) > * {
+    width: auto;
+    white-space: nowrap;
+    flex: 0;
+}
+
+
+.item > section > div:nth-of-type(2) > button {
+    background-color: var(--sec-bg);
+    padding: 5px;
+    font-size: var(--font-small);
+}
+
+.item > section >  div:nth-of-type(2)::before {
+    content: "کدها:";
+    font-size: var(--font-small);
+    align-self: center;
+}
+
+.inline-simple {
+    width: 100%;
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 5px;
+    
+}

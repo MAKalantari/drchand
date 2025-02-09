@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fa" class="theme-light font-medium font-tahoma">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/style/main.css">
+    <script src="src/script/main.js" defer></script> 
+    <title>ارزیاب دندانپزشکی</title>
+</head>
+<div class="loginpage" id="loginpage">
+    <img src="src/resources/images/logo.png" style="margin-bottom: 8px;">
+    <div id="loginform">
+        <h1 id="loginMsg" style="color:var(--main-text); text-align: center; width: 100%; margin: 0;">مشخصات حساب خود را در زیر وارد کنید:</h1>
+        <input type="text" autocomplete="username" placeholder="نام کاربری" id="username"/>
+        <input type="password" autocomplete="current-password" placeholder="رمز عبور" id="password"/>
+
+        <div style="width: 100%; display: flex !important; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; gap: 10px;">
+            <label style="color:var(--main-text);" for="loginCheck">من را به خاطر بسپار</label>
+            <input id="loginCheck" onchange="setLoginMemory()" style=" max-width: 14px; height: 14px;" type="checkbox" id="autoLogin"/>
+        </div>
+        <button onclick="login()">وارد شو</button>
+        <button onclick="">تماس</button>
+    </div>
+    <span>محمدعلی کلانتری، فروردین 1403. www.Kalantari.info</span>
+</div>
+<body>
+    <div class="main-container">
+    <!-- div class="head">
+        <a href="https://www.kalantari.info" target="_blank">kalantari.info</a>
+        <h1>نرم‌افزار راهنمای ارزیابی هزینه‌های دندانپزشکی (محمدعلی کلانتری، فروردین 1403)</h1>
+    </div -->
+    <section id="sectionToothNum">
+        <h1 id="toothNumTitle">شماره دندان
+            <button class="hide-btn" onclick="hideCite(this)">پنهان</button>
+        </h1>
+        <cite>
+            <form class="teeth" id="teethForm" style="--scale: 5;">
+                <input type="text" id="teethInput_UR" tag="بالا چپ" formula='n+m'/>
+                <hr>
+                <input type="text" id="teethInput_UL" tag="بالا راست" formula='m-(n-1)'/>
+                <hr>
+                <input type="text" id="teethInput_DR" tag="پایین چپ" formula='(m*3)-(n-1)'/>
+                <hr>
+                <input type="text" id="teethInput_DL" tag="پایین راست" formula='n+(m*3)'/>
+            </form>
+            <div class="vertical">
+                <select id="jawList">
+                    <option value="0">. . .</option>
+                    <option value="33">فک بالا</option>
+                    <option value="34">فک پایین</option>
+                    <option value="35">دو فک</option>
+                    <option value="36">نیم فک راست</option>
+                    <option value="37">نیم فک میانی</option>
+                    <option value="38">نیم فک چپ</option>
+                    <option value="39">لب</option>
+                    <option value="40">زبان</option>
+                </select>
+                <hr class="wide-hr"/>
+                <input class="" placeholder="سن" id="ageInput"/>
+            </div>
+        </cite>
+    </section>
+
+    <section id="sectionCost">
+        <h1>هزینه
+            <button class="hide-btn" onclick="hideCite(this)">پنهان</button>
+        </h1>
+        <cite style="flex-direction: column;">
+            <div class="inline">
+                <button tip="عنوان مشابه بعدی" id="altUpBtn" disabled>▲</button>
+                <input list="titles" autocomplete="on" ma placeholder="عنوان هزینه" id="titleInput"/>
+                <datalist id="titles"></datalist>
+                <button tip="عنوان مشابه قبلی" style="--direction: -1;" id="altDownBtn" disabled>▼</button>
+            </div>
+
+            <div class="inline">
+                <button tip="ثبت خودکار متخصص مربوط به هزینه" id="matchingDocBtn" disabled>متخصص</button>
+                <input list="doctors" placeholder="تخصص پزشک" id="doctorInput" value=""/>
+                <datalist id="doctors"></datalist>
+                <button id="generalDocBtn" disabled>عمومی</button>
+            </div>
+            <div class="inline">
+            <button id="maxPayBtn" tip="تعرفه × ضریب" disabled>حداکثر</button>
+            <input type="text" dir="ltr" style="direction: ltr !important;" min="1" id="costInput" placeholder="مبلغ هزینه به ریال"/>
+            <input type="text" dir="ltr" style="display: none; max-width: 25%; direction: ltr !important;" min="1" id="labInput" placeholder="اپراتور"/>
+            <button id="payBtn" tip="حداقل تعرفه مصوب" disabled>تعرفه</button>
+            </div>
+        </cite>
+    </section>
+
+    <section id="sectionTotal">
+        <h1 style="border-radius: 10px;">
+            (غیرفعال) تقسیم هزینه
+            <button class="hide-btn"  onclick="hideCite(this)">نمایش</button>
+        </h1>
+        <cite style="display: none; flex-direction: column; " >
+
+            <!-- <section class="item">
+                <section>
+                    <div style="color: var(--sec-text);" class="inline">
+                        <input type="text" dir="ltr" style="direction: ltr !important;" min="1" placeholder="مبلغ کل فاکتور"/>
+                        <select>
+                            <option>تقسیم به نسبت تعرفه</option>
+                            <option>تقسیم مساوی</option>
+                            <option>به تعرفه به استثنای آخرین مبلغ</option>
+                            <option>به تعرفه به استثنای آخرین مبلغ</option>
+                        </select>
+                        <button tip="افزودن هزینه کنونی به لیست">+</button>
+                    </div>
+                </section>
+            </section> -->
+
+            <div class="item">
+                <h1>
+                    <button class="main-btn">▲</button>
+                    <label>0</label>
+                    <button class="main-btn">▼</button>
+                </h1>
+                <section>
+                    <div>
+                        <section>
+                            <div class="title">عنوان</div>
+                            <div class="title">پزشک</div>
+                        </section>
+                        <section>
+                            <form class="teeth" id="teethForm" style="--scale: 5;">
+                                <input disabled value="3"/>
+                                <hr>
+                                <input disabled/>
+                                <hr>
+                                <input disabled/>
+                                <hr>
+                                <input disabled/>
+                            </form>
+                        </section>
+                        <section>
+                            <input style="flex-basis: 50%;"  disabled/>
+                                <button style="flex-basis: 50%;" class="main-btn" tip="بر اساس نوع تقسیم انتخاب شده">کپی</button>
+                        </section>
+                        <section>
+                            <button class="main-btn" tip="افزودن هزینه کنونی به لیست">حذف</button>
+                            <button class="main-btn"  tip="افزودن هزینه کنونی به لیست">نمایش</button>
+                        </section>
+                    </div>
+
+                    <div>
+                        <button class="main-btn">اصلی: 0000</button>
+                        <button class="main-btn">فرعی 1: 1111</button>
+                        <button class="main-btn">فرعی 2: 2222</button>
+                    </div>
+                </section>
+            </div>
+
+        </cite>
+    </section>
+
+    <section id="sectionMessages">
+        <h1>پیغام‌ها
+            <button class="hide-btn" onclick="hideCite(this)">پنهان</button>
+        </h1>
+        <cite id="msgContainer" style="flex-direction: column;">
+            <ul id="msgBox"></ul>
+        </cite>
+    </section>
+    <div class="bottom">
+        <div class="bottom-inner" id="bottomInner">
+            <button class="main-btn" style="max-width: 15%; background-color: var(--button-accent3); color:#242424;" id="moreButton">⚙</button>
+            <button class="main-btn" style="max-width: 30%; background-color: var(--button-accent3); color:#242424;" id="clearButton">پاک</button>
+            <button class="main-btn" style="background-color: var(--button-accent1); color:#242424;" id="evaluateButton">ارزیابی</button>
+        </div>
+        <button value="small" id="bottomStateBtn" class="main-btn bottom-state-btn">+</button>
+    </div>
+
+    <div class="evaluation" id="evaluation">
+        <section style="max-width: var(--max-width);">
+            <h1>ارزیابی</h1>
+            <cite style="flex-wrap: wrap;">
+                <ul style="min-width: 100%; height: max-content; flex: 1 1;" id="evalList"></ul>
+                <button class="main-btn" style="max-width: 30%; height: calc(var(--font-medium) * 3); align-self: flex-end;" id="evalClose">بستن</button>
+                <button class="main-btn" dir="ltr" style="height: calc(var(--font-medium) * 3); background-color:var(--button-accent2); color:#242424; direction: ltr; align-self: flex-end;" id="evalCopy" value=""></button>
+            </cite>
+        </section>
+    </div>
+
+    <div class="more" id="more">
+        <section style="max-width: var(--max-width);">
+            <h1>تنظیمات</h1>
+            <cite style="flex-wrap: wrap;">
+                <div style="min-width: 100%; height: max-content; flex: 1 1;" id="moreContent">
+                    <h2>قرارداد</h2>
+                    <label>فرانشیز (درصد):</label>
+                    <input type="number" placeholder="درصد" id="franchiseInput" min="0" max="100" maxlength="3" minlength="1" step="1"/>
+                    <label>ضریب تعرفه:</label>
+                    <input type="number" min="0" step=".1" id="factorInput"/>
+
+                    <h2>تنظمات محاسبه</h2>
+                    <label>تعیین خودکار سن:</label>
+                    <input style="width: max-content;" type="checkbox" id="autoAgeInput" value="false"/>
+
+                    <h2>تنظیمات نمایش</h2>
+                    <label>نمایش:</label>
+                    <select id="themeList">
+                        <option value="theme-light">روشن</option>
+                        <option value="theme-dark"">تاریک</option>
+                        <option value="theme-simple">ساده</option>
+                        <option value="theme-mint">آدامس</option>
+                        <option value="theme-contrast">واضح</option>
+                        <option value="theme-contrast-dark">واضح متعادل</option>
+                        <option value="theme-piss">آفتاب</option>
+                    </select>
+                    <label>فونت:</label>
+                    <select id="fontfaceList">
+                        <option value="font-irsans">ایران سنس</option>
+                        <option value="font-yekan"">یکان</option>
+                        <option value="font-nazanin">نازنین</option>
+                        <option value="font-tahoma">تاهما</option>
+                    </select>
+                    <label>اندازه متن:</label>
+                    <select id="fontList">
+                        <option value="font-small">کوچک</option>
+                        <option value="font-medium">متوسط</option>
+                        <option value="font-large">بزرگ</option>
+                    </select>
+                    <h2>حساب کاربری</h2>
+                    <button onclick="logout()" class="main-btn">خروج از حساب کاربری</button>
+                </div>
+                <button class="main-btn" style="height: calc(var(--font-medium) * 3); align-self: flex-end;" id="moreClose">بستن</button>
+            </cite>
+        </section>
+    </div>
+
+    <div class="reqinfo" id="reqinfo">
+        <section style="max-width: var(--max-width);">
+            <h1 id="reqinfoTitle"></h1>
+            <cite  style="flex-wrap: wrap;">
+                <div style="min-width: 100%; height: max-content; flex: 1 1;" id="reqinfoContent">
+
+                </div>
+                <button class="main-btn" style="height: calc(var(--font-medium) * 3); align-self: flex-end;" id="reqinfoClose">بستن</button>
+            </cite>
+        </section>
+    </div>
+
+    <div class="image-view" id="imageView">
+        <img id="imageViewSrc" src=""/>
+    </div>
+
+    <audio id="audio" src="src/resources/sounds/click.mp3"></audio>
+    <div class="tooltip" id="tooltip"></div>
+    </div>
+</body>
+</html>

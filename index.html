@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="دکترچند" content="قیمت ویزیت دکتر، هزینه دندانپزشکی و تعرفه خدمات درمانی">
     <title>دکتر چند؟</title>
     <link rel="stylesheet" href="src/style.css">
     <script type="text/javascript" src="src/script.js" defer></script>
@@ -12,9 +12,11 @@
     <header>
         <h1>دکتر چند؟</h1>
         <h2>پایگاه جامع ارزیابی و اطلاع رسانی تعرفه خدمات درمانی بیمه های تکمیلی</h2>
+        <h2 style="font-weight: 300;">توسعه دهنده: <a style="color: inherit; " href="https://kalantari.info/" target="_blank">محمدعلی کلانتری</a></h2>
     </header>
     <h1>کمک ارزیاب</h1>
     <h2>مجموعه ای از نرم افزارهای تحت وب جهت تسهیل عمل ارزیابی خسارت درمان. همچنین بیمه شدگان میتوانند با کمک این بخش از ریز و جزئیات نحوه ارزیابی هزینه های خود آگاه شوند.</h2>
+    
     <section>
         <button onclick="window.open('/visit')">
             <img src="src/images/visit.jpg"/>
@@ -25,29 +27,35 @@
             <img src="src/images/dentist.jpeg"/>
             <label>ارزیاب دندانپزشکی</label>
         </button>
+
+        <button disabled>
+            <img style="filter: grayscale(1);" src="src/images/medicine.jpeg"/>
+            <label>ارزیاب دارو</label>
+            <a>به زودی</a>
+        </button>
     </section>
     <h1>تعرفه خدمات</h1>
     <h2>فهرست و جداول تعرفه خدمات درمانی (لیست قیمت + کتاب ارزش های نسبی خدمات سلامت)</h2>
     <ul>
-        <li style="--accent: #425690;">
+        <li style="--accent: #4242bb;">
             <label>دندانپزشکی</label>
-            <desc>تعرفه خدمات دندانپزشکی سال <b>1403</b><b>PDF</b></desc>
+            <desc>تعرفه خدمات دندانپزشکی امسال <b>1403</b><b>PDF</b></desc>
             <a href="./src/downloads/dandan_1403.pdf">دانلود</a>
         </li>
-        <li style="--accent: #425690;">
+        <li style="--accent: #565656;">
             <label>دندانپزشکی</label>
-            <desc>تعرفه خدمات دندانپزشکی سال <b>1402</b><b>PDF</b></desc>
+            <desc>تعرفه خدمات دندانپزشکی پارسال <b>1402</b><b>PDF</b></desc>
             <a href="./src/downloads/dandan_1402.pdf">دانلود</a>
         </li>
-        <li style="--accent: #935064;">
+        <li style="--accent: #aa5050;">
             <label>پاراکلینیکی</label>
-            <desc>تعرفه هزینه های پاراکلینیکی و جراحی<b>1403</b><b>اکسل کتاب ارزش های نسبی</b></desc>
+            <desc>تعرفه خدمات پاراکلینیکی و جراحی امسال<b>1403</b><b>اکسل کتاب ارزش های نسبی</b></desc>
             <a href="./src/downloads/para_1403.xlsx">دانلود</a>
         </li>
 
-        <li style="--accent: #935064;">
+        <li style="--accent: #565656;">
             <label>پاراکلینیکی</label>
-            <desc>تعرفه هزینه های پاراکلینیکی و جراحی<b>1402</b><b>اکسل کتاب ارزش های نسبی</b></desc>
+            <desc>تعرفه خدمات پاراکلینیکی و جراحی پارسال<b>1402</b><b>اکسل کتاب ارزش های نسبی</b></desc>
             <a href="./src/downloads/para_1402.xlsx">دانلود</a>
         </li>
     </ul>

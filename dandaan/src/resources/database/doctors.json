@@ -1,0 +1,72 @@
+[
+    {
+        "per":"پزشک عمومی (دکترای حرفه‌ای دندانپزشکی)",
+        "eng":"General Dentist",
+        "key":1
+    },
+    {
+        "per":"متخصص درمان ریشه",
+        "eng":"Endodontics",
+        "key":2
+    },
+    {
+        "per":"متخصص جراحی فک و صورت",
+        "eng":"Oral and Maxillofacial Surgery",
+        "key":3
+    },
+    {
+        "per":"متخصص درمان بیماری ها و جراحی های لثه",
+        "eng":"Orthodontics ",
+        "key":4
+    },
+    {
+        "per":"متخصص پروتزهای دندانی",
+        "eng":"Prosthodontics ",
+        "key":5
+    },
+    {
+        "per":"متخصص دندانپزشکی اطفال",
+        "eng":"Pediatric Dentistry",
+        "key":6
+    },
+    {
+        "per":"متخصص دندانپزشکی ترمیمی / زیبایی",
+        "eng":"Restorative/Cosmetic Dentistry",
+        "key":7
+    },
+    {
+        "per":"متخصص رادیولوژی دندانپزشکی",
+        "eng":"Oral and Maxillofacial Radiology",
+        "key":8
+    },
+    {
+        "per":"متخصص بیماری های دهان و دندان",
+        "eng":"Oral Health and Medicine",
+        "key":9
+    },
+    {
+        "per":"متخصص آسیب شناسی دهان و فک و صورت",
+        "eng":"Oral and Maxillofacial Pathology",
+        "key":10
+    },
+    {
+        "per":"متخصص دندانپزشکی جامعه نگر",
+        "eng":"Public Health Dentistry",
+        "key":11
+    },
+    {
+        "per":"متخصص مواد دندانی",
+        "eng":"Dental Material",
+        "key":12
+    },
+    {
+        "per":"متخصص پریودنتیست",
+        "eng":"Periodontist",
+        "key":13
+    },
+    {
+        "per":"بهداشتکار یا پرستار دندانپزشکی",
+        "eng":"Nurse",
+        "key":14
+    }
+]
