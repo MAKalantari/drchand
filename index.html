@@ -6,24 +6,50 @@
     <title>دکتر چند؟</title>
     <link rel="stylesheet" href="src/style.css">
     <script type="text/javascript" src="src/script.js" defer></script>
-    <rel
+
 </head>
 <body>
     <header>
         <h1>دکتر چند؟</h1>
         <h2>پایگاه جامع ارزیابی و اطلاع رسانی تعرفه خدمات درمانی بیمه های تکمیلی</h2>
     </header>
-    <ul>
-        <button onclick="window.open('https://kalantari.info/visit')">
+    <h1>کمک ارزیاب</h1>
+    <h2>مجموعه ای از نرم افزارهای تحت وب جهت تسهیل عمل ارزیابی خسارت درمان. همچنین بیمه شدگان میتوانند با کمک این بخش از ریز و جزئیات نحوه ارزیابی هزینه های خود آگاه شوند.</h2>
+    <section>
+        <button onclick="window.open('/visit')">
             <img src="src/images/visit.jpg"/>
-            <label>ویزیت</label>
+            <label>ارزیاب ویزیت</label>
         </button>
 
-        <button onclick="window.open('https://kalantari.info/dandaan')"">
+        <button onclick="window.open('/dandaan')"">
             <img src="src/images/dentist.jpeg"/>
-            <label>دندانپزشکی</label>
+            <label>ارزیاب دندانپزشکی</label>
         </button>
+    </section>
+    <h1>تعرفه خدمات</h1>
+    <h2>فهرست و جداول تعرفه خدمات درمانی (لیست قیمت + کتاب ارزش های نسبی خدمات سلامت)</h2>
+    <ul>
+        <li style="--accent: #425690;">
+            <label>دندانپزشکی</label>
+            <desc>تعرفه خدمات دندانپزشکی سال <b>1403</b><b>PDF</b></desc>
+            <a href="./src/downloads/dandan_1403.pdf">دانلود</a>
+        </li>
+        <li style="--accent: #425690;">
+            <label>دندانپزشکی</label>
+            <desc>تعرفه خدمات دندانپزشکی سال <b>1402</b><b>PDF</b></desc>
+            <a href="./src/downloads/dandan_1402.pdf">دانلود</a>
+        </li>
+        <li style="--accent: #935064;">
+            <label>پاراکلینیکی</label>
+            <desc>تعرفه هزینه های پاراکلینیکی و جراحی<b>1403</b><b>اکسل کتاب ارزش های نسبی</b></desc>
+            <a href="./src/downloads/para_1403.xlsx">دانلود</a>
+        </li>
 
+        <li style="--accent: #935064;">
+            <label>پاراکلینیکی</label>
+            <desc>تعرفه هزینه های پاراکلینیکی و جراحی<b>1402</b><b>اکسل کتاب ارزش های نسبی</b></desc>
+            <a href="./src/downloads/para_1402.xlsx">دانلود</a>
+        </li>
     </ul>
 </body>
 </html>

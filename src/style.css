@@ -1,3 +1,14 @@
+@font-face {
+    font-family: yekan;
+    font-style: normal;
+    font-weight: normal;
+    src: url("./BYekan.ttf");
+  }
+
+* {
+    font-family: yekan !important;
+}
+
 body {
     background-color: white;
     padding: 0px 16px 32px 16px;
@@ -5,7 +16,7 @@ body {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 4px;
     align-items: stretch;
     
 }
@@ -39,24 +50,49 @@ header > h2 {
     margin: 0;
 }
 
+body > h1 {
+    width: 100%;
+    margin: 16px 0 0 0;
+    padding: 8px 16px 4px 0px;
+    box-sizing: border-box;
+    font-size: medium;
+    font-weight: 600;
+    color: #888;
+    border-bottom: 1px dashed #ccc;
+    text-align: center;
+    direction: rtl;
+}
 
-ul {
+body > h2 {
+    width: 100%;
+    max-width: 800px;
+    align-self: center;
+    margin: 0;
+    padding: 0 0 16px 0;
+    box-sizing: border-box;
+    font-size: medium;
+    font-weight: 200;
+    color: #444;
+    text-align: justify;
+    direction: rtl;
+    font-size: 14px;
+}
+
+section {
     width: 100%;
     max-width: 800px;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     gap: 8px;
     align-self: center;
     justify-self: center;
-
     list-style: none;
     direction: rtl;
-    padding: 16px;
     box-sizing: border-box;
+    justify-content: space-between;
 }
 
-ul > button {
+section > button {
     flex: 1 1;
     border: none;
     outline: none;
@@ -70,13 +106,13 @@ ul > button {
     cursor: pointer;
 }
 
-ul > button > img{
+section > button > img{
     object-fit: cover;
     width: 100%;
     height: 100%;
 }
 
-ul > button > label{
+section > button > label{
     position: absolute;
     height: auto;
     bottom: 6%;
@@ -96,9 +132,114 @@ ul > button > label{
     align-items: center;
 }
 
-ul > button:hover > label{
+section > button:hover > label{
     bottom: 8%;
     border-radius: 4px;
     background-color: rgba(0, 0, 0, .75);
 
+}
+
+ul {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-self: center;
+    justify-self: center;
+    list-style: none;
+    direction: rtl;
+    box-sizing: border-box;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 0;
+}
+
+ul > li{
+    width: 100%;
+    --accent: #434343;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0;
+    min-width: 240px;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    gap: 0;
+    flex-direction: row;
+    align-items: stretch;
+    opacity: 0.75;
+    user-select: none;
+    transition-duration: .1s;
+}
+
+ul > li:hover{
+    opacity: 1;
+}
+
+ul > li > label{
+    width: auto;
+    padding: 4px 16px;
+    box-sizing: border-box;
+    background-color: var(--accent);
+    border: 1px solid var(--accent);
+    border-left: none;
+    border-radius: 0 6px 6px 0;
+    color: white;
+    font-size: small;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    min-width: 100px;
+    text-align: center;
+}
+
+ul > li > desc{
+    width: auto;
+    flex: 1 1;
+    padding: 4px;
+    box-sizing: border-box;
+    background-color: #434343;
+    border: 1px solid var(--accent);
+    background-color: transparent;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    display: flex;
+    gap: 2px;
+    align-items: center;
+    display: flex;
+    align-items: stretch;
+    user-select: none;
+}
+
+ul > li > desc > b{
+    background-color: var(--accent);
+    color: white;
+    padding: 2px;
+    border-radius: 2px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+ul > li > a {
+    min-width: 96px;
+    background-color: var(--accent);
+    color: white;
+    border: 1px solid var(--accent);
+    border-right: none;
+    border-radius: 6px 0 0 6px;
+    padding: 4px 32px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition-duration: .1s;
+}
+
+ul > li > a:hover {
+    padding: 4px 40px;
+    text-decoration: underline;
 }
