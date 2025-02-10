@@ -7,6 +7,12 @@
 
 * {
     font-family: yekan !important;
+    user-select: none;
+}
+
+::selection {
+    background-color: #666;
+    color: white;
 }
 
 body {
@@ -18,28 +24,47 @@ body {
     flex-direction: column;
     gap: 4px;
     align-items: stretch;
-    
 }
 
 header {
     width: 100%;
-    border-top: 6px solid #434343;
+    border-top: 6px solid #666;
+    border-bottom: 1px solid #ccc;
     padding: 32px;
     box-sizing: border-box;
-    background-color: #ebebeb;
+    background-color: #eee;
     display: flex;
     flex-direction: column;
     gap: 8px;
+    align-items: center;
 }
 
 header > h1 {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
     color: #434343;
     font-size: larger;
     font-weight: bold;
     text-align: center;
     margin: 0;
+    direction: rtl;
+    align-items: flex-end;
+    transition-duration: 0.1s;
+    cursor: help;
 }
 
+header > h1:hover {
+    gap: 12px;
+}
+
+header > h1 > img {
+    width: 38px;
+}
+
+header > h1:hover > img{
+    opacity: 0.5;
+}
 
 header > h2 {
     color: #434343;
@@ -48,6 +73,7 @@ header > h2 {
     align-self: center;
     opacity: .75;
     margin: 0;
+    font-weight: 200;
 }
 
 body > h1 {
@@ -110,6 +136,30 @@ section > button > img{
     object-fit: cover;
     width: 100%;
     height: 100%;
+    filter: grayscale(.25);
+    position: relative;
+    transition-duration: 0.15s;
+}
+
+section > button::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+    transition-duration: 0.15s;
+}
+
+section > button:hover::after{
+    background: transparent;
+    transition-duration: 0.15s;
+}
+
+section > button:hover > img{
+    filter: grayscale(0);
 }
 
 section > button > a{
@@ -143,6 +193,7 @@ section > button > label{
     transition-duration: 0.15s;
     backdrop-filter: blur(8px);
     align-items: center;
+    z-index: 1;
 }
 
 section > button:hover > label{
@@ -255,4 +306,29 @@ ul > li > a {
 ul > li > a:hover {
     padding: 4px 40px;
     text-decoration: underline;
+}
+
+footer {
+    width: 100%;
+    display: flex;
+    gap: 8px;
+    direction: rtl;
+    padding: 8px;
+    box-sizing: border-box;
+    background-color: #eee;
+    border-radius: 8px;
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+footer > label{
+    flex: 1 1;
+    font-size: small;
+    background-color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    color: #444;
+    white-space: nowrap;
+    text-align: center;
 }
